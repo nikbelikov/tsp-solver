@@ -1,6 +1,6 @@
 {
   "name": "@nikbelikov/tsp-solver",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This package will help to solve the travelling salesman problem.",
   "files": [
     "lib/**/*"
