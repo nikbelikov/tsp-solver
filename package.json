@@ -23,6 +23,10 @@
   ],
   "author": "Nikolay Belikov",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikbelikov/tsp-solver"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.10",
     "jest": "^26.4.2",
