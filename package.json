@@ -10,7 +10,10 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "minor": "npm version minor",
+    "patch": "npm version patch",
+    "publish": "npm publish"
   },
   "keywords": [
     "tsp",
