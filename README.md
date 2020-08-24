@@ -1,3 +1,7 @@
+## What a heck is that?
+
+This package will help you in solving the traveling salesman problem.
+
 ## How to use
 
 ```
