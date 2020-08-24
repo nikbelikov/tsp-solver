@@ -6,6 +6,14 @@ This package will help you in solving the traveling salesman problem.
 
 ## How to use
 
+Install the package:
+
+```
+npm i @nikbelikov/tsp-solver
+```
+
+And then:
+
 ```
 import TSPSolver from '@nikbelikov/tsp-solver';
 
