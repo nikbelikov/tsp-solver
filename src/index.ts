@@ -9,20 +9,8 @@ import mutate from "./utils/mutate";
 import cross from "./utils/cross";
 import getFitnessForChromosome from "./utils/getFitnessForChromosome";
 import getSplitPosition from "./utils/getSplitPosition";
-import { IChromosomeWithFitness } from "./models/Chromosome";
-
-// TODO: move to models folder
-interface IParams {
-  population?: IChromosomeWithFitness[];
-  populationAmount?: number;
-  generations?: number;
-  mutate?: number;
-}
-
-interface IResult {
-  result: IPoint;
-  latestPopulation: IChromosomeWithFitness[];
-}
+import {IParams} from "./models/Params";
+import {IResult} from "./models/Result";
 
 const solve = (
   points: IPoint[],

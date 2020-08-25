@@ -55,4 +55,4 @@ TSPSolver(points, values, { ...params });
 | `population` | array | [] | You can pass through a population which comes as a result of a previous iteration. It has a format: `[{ chromosome: [number], fitness: number }]` |
 | `populationAmount` | number | 20 | Population amount which will be involved in a participation. |
 | `generations` | number | 100 | For how many generations we need to solve the problem. |
-| `mutate` | number | 20 | Mutation amount for a crossed chromosomes. |
+| `mutate` | number | 20 | Mutation percent for a crossed chromosomes. |
