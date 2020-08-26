@@ -21,7 +21,9 @@
     "problem",
     "solver",
     "np",
-    "np-complete"
+    "np-complete",
+    "genetic algorithm",
+    "genetic"
   ],
   "author": "Nikolay Belikov",
   "license": "ISC",
