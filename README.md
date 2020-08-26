@@ -2,7 +2,7 @@
 
 This package will help you in solving the traveling salesman problem.
 
-> 🛠 This package is in a development now. Please wait for a more stable version.
+> 🛠 This package is in development now. Please wait for a more stable version.
 
 ## How to use
 
@@ -63,8 +63,8 @@ TSPSolver(points, values, { ...params });
 
 | Parameter | Type | Default value | Description |
 |---|---|---|---|
-| `population` | array | [] | You can pass through a population which comes as a result of a previous iteration. It has a format: `[{ chromosome: [number], fitness: number }]` |
+| `population` | array | [] | You can pass through a population that comes as a result of a previous iteration. It has a format: `[{ chromosome: [number], fitness: number }]` |
 | `populationAmount` | number | 20 | Population amount which will be involved in a participation. |
 | `generations` | number | 100 | How many generations you need to solve the problem. |
 | `mutate` | number | 20 | Mutation percent for a crossed chromosomes. |
-| `idToReturn` | number | undefined | `Id` you need to return. If `undefined`, the algorithm will find a better way to visit all the cities and no matter where you will finish route. If you want to return to a start city, pass through 0. If you want to finish in a particular point, pass through an index of that point (for example, `TSPSolver(points, values, { idToReturn: 2 })`). |
+| `idToReturn` | number | undefined | `Id` you need to return. If `undefined`, the algorithm will find a better way to visit all the cities and no matter where you will finish the route. If you want to return to a start city, pass through 0. If you want to finish at a particular point, pass through an index of that point (for example, `TSPSolver(points, values, { idToReturn: 2 })`). |
