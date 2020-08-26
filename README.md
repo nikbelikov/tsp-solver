@@ -43,6 +43,8 @@ const VALUES = [
   { set: [3, 5], value: 401 },
   { set: [4, 5], value: 328 },
 ];
+
+TSPSolver(POINTS, VALUES);
 // => { latestPopulation: [{chromosome, fitness}], result: [{id, name}] }
 ```
 
