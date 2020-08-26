@@ -1,6 +1,6 @@
 import { IPoint } from "./models/Point";
 import { IValue } from "./models/Value";
-import getPopulation from "./utils/getPopulation";
+import generatePopulation from "./utils/generatePopulation";
 import { sortBy } from "lodash";
 import pickParents from "./utils/pickParents";
 import select from "./utils/select";
@@ -9,41 +9,45 @@ import mutate from "./utils/mutate";
 import cross from "./utils/cross";
 import getFitnessForChromosome from "./utils/getFitnessForChromosome";
 import getSplitPosition from "./utils/getSplitPosition";
-import {IParams} from "./models/Params";
-import {IResult} from "./models/Result";
+import { IParams } from "./models/Params";
+import { IResult } from "./models/Result";
 
 const solve = (
   points: IPoint[],
   values: IValue[],
-  params?: IParams
+  parameters?: IParams
 ): IResult => {
-  const solverParams = {
-    population: params?.population || [],
-    populationAmount: params?.populationAmount || 20,
-    generations: params?.generations || 100,
-    mutate: params?.mutate || 20,
+  const params = {
+    population: parameters?.population ?? [],
+    populationAmount: parameters?.populationAmount ?? 20,
+    generations: parameters?.generations ?? 100,
+    mutate: parameters?.mutate ?? 20,
+    idToReturn: parameters?.idToReturn ?? undefined,
   };
 
   let populationWithFitness;
-  if (solverParams.population.length > 0) {
-    populationWithFitness = solverParams.population;
+  if (params.population.length > 0) {
+    populationWithFitness = params.population;
   } else {
     populationWithFitness = getPopulationWithFitness(
-      getPopulation(points, solverParams.populationAmount),
+      generatePopulation(points, params.populationAmount, params.idToReturn),
       values
     );
   }
 
-  for (let i = 0, l = solverParams.generations; i < l; i++) {
-    const children = cross(
-      pickParents(populationWithFitness),
-      values,
-      getSplitPosition(populationWithFitness[0].chromosome)
+  for (let i = 0, l = params.generations; i < l; i++) {
+    const parents = pickParents(populationWithFitness);
+    const splitPosition = getSplitPosition(populationWithFitness[0].chromosome);
+    const children = cross(parents, values, splitPosition, params.idToReturn);
+    const firstChromosome = mutate(
+      children[0].chromosome,
+      params.mutate,
+      params.idToReturn
     );
-    const firstChromosome = mutate(children[0].chromosome, solverParams.mutate);
     const secondChromosome = mutate(
       children[1].chromosome,
-      solverParams.mutate
+      params.mutate,
+      params.idToReturn
     );
     const firstChild = {
       chromosome: firstChromosome,
@@ -68,3 +72,5 @@ const solve = (
 };
 
 export default solve;
+
+// TODO: populationWithFitness -> population

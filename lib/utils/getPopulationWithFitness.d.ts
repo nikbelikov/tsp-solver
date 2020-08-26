@@ -1,5 +1,4 @@
-import { IChromosomeWithFitness } from "../models/Chromosome";
-import { IPopulation } from "../models/Population";
+import { IChromosome, IChromosomeWithFitness } from "../models/Chromosome";
 import { IValue } from "../models/Value";
-declare const _default: (population: IPopulation, values: IValue[]) => IChromosomeWithFitness[];
+declare const _default: (population: IChromosome[], values: IValue[]) => IChromosomeWithFitness[];
 export default _default;

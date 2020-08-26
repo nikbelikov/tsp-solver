@@ -1,34 +1,40 @@
-import { random } from "lodash";
 import { IChromosome, IChromosomeWithFitness } from "../models/Chromosome";
 import getFitnessForChromosome from "./getFitnessForChromosome";
 import { IValue } from "../models/Value";
+import { clone } from "lodash";
 
 export default (
-  population: IChromosomeWithFitness[],
+  parents: IChromosomeWithFitness[],
   values: IValue[],
-  splitPosition: number
+  splitPosition: number,
+  idToReturn?: number
 ): IChromosomeWithFitness[] => {
-  const firstParent = population[0];
-  const secondParent = population[1];
+  const firstChromosome = clone(parents[0].chromosome);
+  const secondChromosome = clone(parents[1].chromosome);
 
   const firstChild: IChromosome = [];
   const secondChild: IChromosome = [];
 
+  if (idToReturn !== undefined) {
+    firstChromosome.pop();
+    secondChromosome.pop();
+  }
+
   for (let i = 0, l = splitPosition; i <= l; i++) {
-    firstChild.push(firstParent.chromosome[i]);
+    firstChild.push(firstChromosome[i]);
   }
 
   for (
-    let i = splitPosition + 1, l = secondParent.chromosome.length - 1;
+    let i = splitPosition + 1, l = secondChromosome.length - 1;
     i <= l;
     i++
   ) {
-    if (!firstChild.includes(secondParent.chromosome[i])) {
-      firstChild.push(secondParent.chromosome[i]);
+    if (!firstChild.includes(secondChromosome[i])) {
+      firstChild.push(secondChromosome[i]);
     }
   }
 
-  secondParent.chromosome.forEach((item) => {
+  secondChromosome.forEach((item) => {
     if (!firstChild.includes(item)) {
       firstChild.push(item);
     }
@@ -40,20 +46,16 @@ export default (
   };
 
   for (let i = 0, l = splitPosition; i <= l; i++) {
-    secondChild.push(secondParent.chromosome[i]);
+    secondChild.push(secondChromosome[i]);
   }
 
-  for (
-    let i = splitPosition + 1, l = firstParent.chromosome.length - 1;
-    i <= l;
-    i++
-  ) {
-    if (!secondChild.includes(firstParent.chromosome[i])) {
-      secondChild.push(firstParent.chromosome[i]);
+  for (let i = splitPosition + 1, l = firstChromosome.length - 1; i <= l; i++) {
+    if (!secondChild.includes(firstChromosome[i])) {
+      secondChild.push(firstChromosome[i]);
     }
   }
 
-  firstParent.chromosome.forEach((item) => {
+  firstChromosome.forEach((item) => {
     if (!secondChild.includes(item)) {
       secondChild.push(item);
     }
@@ -63,6 +65,11 @@ export default (
     chromosome: secondChild,
     fitness: getFitnessForChromosome(secondChild, values),
   };
+
+  if (idToReturn !== undefined) {
+    one.chromosome.push(idToReturn);
+    two.chromosome.push(idToReturn);
+  }
 
   return [one, two];
 };

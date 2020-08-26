@@ -1,17 +1,27 @@
 import { IChromosome } from "../models/Chromosome";
 import { random, clone, remove } from "lodash";
 
-export default (chromosome: IChromosome, percent: number): IChromosome => {
+export default (
+  chromosome: IChromosome,
+  percent: number,
+  idToReturn?: number
+): IChromosome => {
   const randomNumber = random(1, 100);
 
   if (randomNumber <= percent) {
     let chromosomeCopy = clone(chromosome);
+    const endOfRandomising = idToReturn !== undefined ? 2 : 1;
 
-    const firstPosition = random(1, chromosomeCopy.length - 1);
-    chromosomeCopy = remove(chromosomeCopy, (item) => {
+    let indexesLeft = [];
+    for (let i = 1, l = chromosomeCopy.length - endOfRandomising; i < l; i++) {
+      indexesLeft.push(i);
+    }
+
+    const firstPosition = random(1, chromosomeCopy.length - endOfRandomising);
+    indexesLeft = remove(indexesLeft, (item) => {
       return item !== firstPosition;
     });
-    const secondPosition = chromosomeCopy[random(1, chromosomeCopy.length - 1)];
+    const secondPosition = indexesLeft[random(1, indexesLeft.length - 1)];
 
     const swapPositions = [firstPosition, secondPosition];
     const resultChromosome = clone(chromosome);
