@@ -11,9 +11,8 @@
     "test": "jest --config jestconfig.json",
     "build": "tsc",
     "lint": "tslint -p tsconfig.json",
-    "minor": "npm version minor",
-    "patch": "npm version patch",
-    "preversion": "npm run build"
+    "minor": "npm run build && npm version minor",
+    "patch": "npm run build && npm version patch"
   },
   "keywords": [
     "tsp",
