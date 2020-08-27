@@ -1,8 +1,12 @@
+# TSP Solver
+
+[![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/nikbelikov/tsp-solver/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/@nikbelikov/tsp-solver.svg?style=flat)](https://www.npmjs.com/package/@nikbelikov/tsp-solver)
+
+> 🛠 This package is in development now. Please wait for a more stable version.
+
 ## What a heck is that?
 
 This package will help you in solving the traveling salesman problem.
-
-> 🛠 This package is in development now. Please wait for a more stable version.
 
 ## How to use
 
