@@ -56,6 +56,7 @@ const params = {
   populationAmount: ...,
   generations: ...,
   mutate: ...,
+  idToReturn: ...,
 }
 
 TSPSolver(points, values, { ...params });
@@ -67,4 +68,4 @@ TSPSolver(points, values, { ...params });
 | `populationAmount` | number | 20 | Population amount which will be involved in a participation. |
 | `generations` | number | 100 | How many generations you need to solve the problem. |
 | `mutate` | number | 20 | Mutation percent for a crossed chromosomes. |
-| `idToReturn` | number | undefined | `Id` you need to return. If `undefined`, the algorithm will find a better way to visit all the cities and no matter where you will finish the route. If you want to return to a start city, pass through 0. If you want to finish at a particular point, pass through an index of that point (for example, `TSPSolver(points, values, { idToReturn: 2 })`). |
+| `idToReturn` | number | undefined | `Id` you need return to. If `undefined`, the algorithm will find a better way to visit all the cities and no matter where you will finish the route. If you want to return to a start city, pass through 0. If you want to finish at a particular point, pass through an index of that point (for example, `TSPSolver(points, values, { idToReturn: 2 })`). |
