@@ -12,7 +12,8 @@
     "build": "tsc",
     "lint": "tslint -p tsconfig.json",
     "minor": "npm version minor",
-    "patch": "npm version patch"
+    "patch": "npm version patch",
+    "preversion": "npm run build"
   },
   "keywords": [
     "tsp",
