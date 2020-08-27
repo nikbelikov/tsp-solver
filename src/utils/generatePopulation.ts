@@ -6,15 +6,15 @@ import getFirstChromosome from "./getFirstChromosome";
 export default (
   points: IPoint[],
   size: number,
-  idToReturn?: number
+  idReturnTo?: number
 ): IChromosome[] => {
   const population = [];
 
-  const firstChromosome = getFirstChromosome(points, idToReturn);
+  const firstChromosome = getFirstChromosome(points, idReturnTo);
   population.push(firstChromosome);
 
   for (let index = 0, length = size - 1; index < length; index++) {
-    population.push(generateChromosome(firstChromosome, idToReturn));
+    population.push(generateChromosome(firstChromosome, idReturnTo));
   }
 
   return population;

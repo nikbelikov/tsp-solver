@@ -5,5 +5,5 @@ export interface IParams {
   populationAmount?: number;
   generations?: number;
   mutate?: number;
-  idToReturn?: number;
+  idReturnTo?: number;
 }

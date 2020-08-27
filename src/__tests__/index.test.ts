@@ -28,7 +28,7 @@ const VALUES = [
 ];
 
 // test("solve", () => {
-//   expect(solve(POINTS, VALUES, { idToReturn: 5 })).toBe("123");
+//   expect(solve(POINTS, VALUES, { idReturnTo: 5 })).toBe("123");
 // });
 
 test("temp", () => {

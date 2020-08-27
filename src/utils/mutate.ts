@@ -4,13 +4,13 @@ import { random, clone, remove } from "lodash";
 export default (
   chromosome: IChromosome,
   percent: number,
-  idToReturn?: number
+  idReturnTo?: number
 ): IChromosome => {
   const randomNumber = random(1, 100);
 
   if (randomNumber <= percent) {
     let chromosomeCopy = clone(chromosome);
-    const endOfRandomising = idToReturn !== undefined ? 2 : 1;
+    const endOfRandomising = idReturnTo !== undefined ? 2 : 1;
 
     let indexesLeft = [];
     for (let i = 1, l = chromosomeCopy.length - endOfRandomising; i < l; i++) {
