@@ -11,6 +11,7 @@ import getFitnessForChromosome from "./utils/getFitnessForChromosome";
 import getSplitPosition from "./utils/getSplitPosition";
 import { IParams } from "./models/Params";
 import { IResult } from "./models/Result";
+import checkParams from "./utils/checkParams";
 
 const solve = (
   points: IPoint[],
@@ -24,6 +25,8 @@ const solve = (
     mutate: parameters?.mutate ?? 20,
     idReturnTo: parameters?.idReturnTo ?? undefined,
   };
+
+  checkParams(points, values);
 
   let populationWithFitness;
   if (params.population.length > 0) {
