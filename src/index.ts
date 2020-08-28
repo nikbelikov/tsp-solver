@@ -26,7 +26,7 @@ const solve = (
     idReturnTo: parameters?.idReturnTo ?? undefined,
   };
 
-  checkParams(points, values);
+  checkParams(points, values, params);
 
   let populationWithFitness;
   if (params.population.length > 0) {

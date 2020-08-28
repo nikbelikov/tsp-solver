@@ -1,18 +1,19 @@
 import { findIndex } from "lodash";
 import { IPoint } from "../models/Point";
 import { IValue } from "../models/Value";
+import { IParams } from "../models/Params";
 
-export default (points: IPoint[], values: IValue[]) => {
+export default (points: IPoint[], values: IValue[], params: IParams) => {
   points.forEach((point, index) => {
     if (point.id !== index) {
       throw new Error(
-        `Points are: ${JSON.stringify(
+        `Looks like '${index}' id is missing. Your points are: ${JSON.stringify(
           points
         )}, but expected format is: ${JSON.stringify([
           { id: 0, name: "Saint Petersburg" },
           { id: 1, name: "Moscow" },
           { id: 2, name: "Pskov" },
-        ])}`
+        ])}...`
       );
     }
   });
