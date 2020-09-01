@@ -8,6 +8,10 @@
 
 This package will help you in solving the traveling salesman problem. It uses a genetic algorithm by now.
 
+## Demo
+
+[https://codesandbox.io/s/cezb9](https://codesandbox.io/s/cezb9)
+
 ## How to use
 
 Install the package:
