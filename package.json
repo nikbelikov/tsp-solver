@@ -31,6 +31,9 @@
     "type": "git",
     "url": "https://github.com/nikbelikov/tsp-solver"
   },
+  "bugs": {
+    "url": "https://github.com/nikbelikov/tsp-solver/issues"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.10",
     "jest": "^26.4.2",
