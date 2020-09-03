@@ -12,6 +12,7 @@ import getSplitPosition from "./utils/getSplitPosition";
 import { IParams } from "./models/Params";
 import { IResult } from "./models/Result";
 import checkParams from "./utils/checkParams";
+import getFirstChromosome from "./utils/getFirstChromosome";
 
 const solve = (
   points: IPoint[],
@@ -29,6 +30,54 @@ const solve = (
   checkParams(points, values);
 
   let populationWithFitness;
+
+  if (points.length < 3) {
+    return {
+      result: points,
+    };
+  }
+
+  let permArr: any = [];
+  let usedChars: any = [];
+
+  if (points.length < 6) {
+    const getPermutations = (array: number[]) => {
+      let index, currentItem;
+      for (index = 0; index < array.length; index++) {
+        currentItem = array.splice(index, 1)[0];
+        usedChars.push(currentItem);
+        if (array.length === 0) {
+          permArr.push(usedChars.slice());
+        }
+        getPermutations(array);
+        array.splice(index, 0, currentItem);
+        usedChars.pop();
+      }
+      return permArr;
+    };
+
+    const chromosomeForPermutation = getFirstChromosome(
+      points,
+      params.idReturnTo
+    );
+
+    chromosomeForPermutation.splice(0, 1);
+
+    if (params.idReturnTo !== undefined) {
+      chromosomeForPermutation.pop();
+    }
+
+    let permutations = getPermutations(chromosomeForPermutation);
+    permutations = permutations.map((item: any) => [0, ...item]);
+    populationWithFitness = getPopulationWithFitness(permutations, values);
+    populationWithFitness = sortBy(populationWithFitness, "fitness");
+    const individual = populationWithFitness[0].chromosome;
+
+    return {
+      result: select(individual, points),
+    };
+  }
+
   if (params.population.length > 0) {
     populationWithFitness = params.population;
   } else {
