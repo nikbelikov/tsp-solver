@@ -85,4 +85,4 @@ TSPSolver(points, values, { ...params });
 | `generations` | number | 100 | How many generations you need to solve the problem. |
 | `mutate` | number | 20 | Mutation percent for a crossed chromosomes. |
 | `idReturnTo` | number | undefined | `Id` you need return to. If `undefined`, the algorithm will find a better way to visit all the cities and no matter where you will finish the route. If you want to return to a start city, pass through 0. If you want to finish at a particular point, pass through an index of that point (for example, `TSPSolver(points, values, { idReturnTo: 2 })`). |
-| `permutation` | number | 7 | That number indicates a count of cities when the package will generate all possible permutations of nodes and **will ignore the genetic algorithm**. Be careful with that number! |
+| `permutations` | number | 7 | That number indicates a count of cities when the package will generate all possible permutations of nodes and **will ignore the genetic algorithm**. Be careful with that number! |
