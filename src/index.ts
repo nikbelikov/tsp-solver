@@ -28,7 +28,7 @@ const solve = (
     permutations: parameters?.permutations ?? 7,
   };
 
-  checkParams(points, values);
+  checkParams(points, values, params);
 
   let populationWithFitness;
 

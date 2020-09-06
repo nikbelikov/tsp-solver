@@ -1,8 +1,13 @@
 import { findIndex } from "lodash";
 import { IPoint } from "../models/Point";
 import { IValue } from "../models/Value";
+import { IParams } from "../models/Params";
 
-export default (points: IPoint[], values: IValue[]) => {
+export default (points: IPoint[], values: IValue[], params: IParams) => {
+  if (params.permutations !== undefined && params.permutations <= 5) {
+    throw new Error(`The permutations parameter can not be less than 5.`);
+  }
+
   points.forEach((point, index) => {
     if (point.id !== index) {
       throw new Error(
