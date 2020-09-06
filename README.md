@@ -10,7 +10,7 @@ This package will help you in solving the traveling salesman problem. It uses a 
 
 ## Demo
 
-[https://codesandbox.io/s/cezb9](https://codesandbox.io/s/cezb9)
+[https://codesandbox.io/s/magical-newton-etqts](https://codesandbox.io/s/magical-newton-etqts)
 
 ## How to use
 
@@ -53,6 +53,11 @@ const VALUES = [
 ];
 
 TSPSolver(POINTS, VALUES);
+
+// when permutations parameter <= POINTS.length
+// => { latestPopulation: [result: [{id, name}] }
+
+// other time
 // => { latestPopulation: [{chromosome, fitness}], result: [{id, name}] }
 ```
 
@@ -75,7 +80,7 @@ TSPSolver(points, values, { ...params });
 
 | Parameter | Type | Default value | Description |
 |---|---|---|---|
-| `population` | array | [] | You can pass through a population that comes as a result of a previous iteration. It has a format: `[{ chromosome: [number], fitness: number }]`. |
+| `population` | array | [] | You can pass through a population that comes as a result of a previous iteration. It has a format: `[{ chromosome: [number], fitness: number }]` (see **How to use** section). |
 | `populationAmount` | number | 20 | Population amount which will be involved in a participation. Will be considered if the `population` parameter stays an empty array. |
 | `generations` | number | 100 | How many generations you need to solve the problem. |
 | `mutate` | number | 20 | Mutation percent for a crossed chromosomes. |
