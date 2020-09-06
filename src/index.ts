@@ -25,6 +25,7 @@ const solve = (
     generations: parameters?.generations ?? 100,
     mutate: parameters?.mutate ?? 20,
     idReturnTo: parameters?.idReturnTo ?? undefined,
+    permutations: parameters?.permutations ?? 7,
   };
 
   checkParams(points, values);
@@ -40,7 +41,7 @@ const solve = (
   let permArr: any = [];
   let usedChars: any = [];
 
-  if (points.length < 6) {
+  if (points.length <= params.permutations) {
     const getPermutations = (array: number[]) => {
       let index, currentItem;
       for (index = 0; index < array.length; index++) {

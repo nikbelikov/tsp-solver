@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/nikbelikov/tsp-solver/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/@nikbelikov/tsp-solver.svg?style=flat)](https://www.npmjs.com/package/@nikbelikov/tsp-solver)
 
-> 🛠 This package is in development now. Please wait for a more stable version.
+> 🛠 This package is in beta now. Please create an [issue on GitHub](https://github.com/nikbelikov/tsp-solver/issues) if you see an error or unexpected behavior.
 
 ## What a heck is that?
 
@@ -67,6 +67,7 @@ const params = {
   generations: ...,
   mutate: ...,
   idReturnTo: ...,
+  permutations: ...,
 }
 
 TSPSolver(points, values, { ...params });
@@ -79,3 +80,4 @@ TSPSolver(points, values, { ...params });
 | `generations` | number | 100 | How many generations you need to solve the problem. |
 | `mutate` | number | 20 | Mutation percent for a crossed chromosomes. |
 | `idReturnTo` | number | undefined | `Id` you need return to. If `undefined`, the algorithm will find a better way to visit all the cities and no matter where you will finish the route. If you want to return to a start city, pass through 0. If you want to finish at a particular point, pass through an index of that point (for example, `TSPSolver(points, values, { idReturnTo: 2 })`). |
+| `permutation` | number | 7 | That number indicates a count of cities when the package will generate all possible permutations of nodes and **will ignore the genetic algorithm**. Be careful with that number! |

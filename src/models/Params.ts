@@ -6,4 +6,5 @@ export interface IParams {
   generations?: number;
   mutate?: number;
   idReturnTo?: number;
+  permutations?: number;
 }
