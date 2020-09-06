@@ -10,7 +10,7 @@ This package will help you in solving the traveling salesman problem. It uses a 
 
 ## Demo
 
-[https://codesandbox.io/s/magical-newton-etqts](https://codesandbox.io/s/magical-newton-etqts)
+[https://codesandbox.io/s/wizardly-knuth-txtvx](https://codesandbox.io/s/wizardly-knuth-txtvx)
 
 ## How to use
 
