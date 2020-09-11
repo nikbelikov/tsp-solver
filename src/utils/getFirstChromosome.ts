@@ -1,21 +1,21 @@
 import { IPoint } from "../models/Point";
 
-export default (points: IPoint[], idReturnTo: number | undefined) => {
+export default (points: IPoint[], finishId: number | undefined) => {
   const firstChromosome: number[] = [];
   points.forEach((point) => {
     firstChromosome.push(point.id);
   });
 
-  if (idReturnTo !== undefined && idReturnTo === 0) {
-    firstChromosome.push(idReturnTo);
+  if (finishId !== undefined && finishId === 0) {
+    firstChromosome.push(finishId);
     return firstChromosome;
   }
 
   const lastItem = firstChromosome[firstChromosome.length - 1];
 
-  if (idReturnTo !== undefined && lastItem !== idReturnTo) {
+  if (finishId !== undefined && lastItem !== finishId) {
     firstChromosome.push(
-      firstChromosome.splice(firstChromosome.indexOf(idReturnTo), 1)[0]
+      firstChromosome.splice(firstChromosome.indexOf(finishId), 1)[0]
     );
   }
 

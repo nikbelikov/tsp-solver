@@ -3,9 +3,9 @@ import { IChromosome } from "../models/Chromosome";
 
 export default (
   chromosome: IChromosome,
-  idReturnTo: number | undefined
+  finishId: number | undefined
 ): IChromosome => {
-  if (idReturnTo === undefined) {
+  if (finishId === undefined) {
     const tail = chromosome.slice(1, chromosome.length);
     return concat(chromosome[0], shuffle(tail));
   }

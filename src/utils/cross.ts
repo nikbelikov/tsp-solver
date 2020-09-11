@@ -7,7 +7,7 @@ export default (
   parents: IChromosomeWithFitness[],
   values: IValue[],
   splitPosition: number,
-  idReturnTo?: number
+  finishId?: number
 ): IChromosomeWithFitness[] => {
   const firstChromosome = clone(parents[0].chromosome);
   const secondChromosome = clone(parents[1].chromosome);
@@ -15,7 +15,7 @@ export default (
   const firstChild: IChromosome = [];
   const secondChild: IChromosome = [];
 
-  if (idReturnTo !== undefined) {
+  if (finishId !== undefined) {
     firstChromosome.pop();
     secondChromosome.pop();
   }
@@ -66,9 +66,9 @@ export default (
     fitness: getFitnessForChromosome(secondChild, values),
   };
 
-  if (idReturnTo !== undefined) {
-    one.chromosome.push(idReturnTo);
-    two.chromosome.push(idReturnTo);
+  if (finishId !== undefined) {
+    one.chromosome.push(finishId);
+    two.chromosome.push(finishId);
   }
 
   return [one, two];

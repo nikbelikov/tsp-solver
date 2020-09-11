@@ -24,7 +24,7 @@ const solve = (
     populationAmount: parameters?.populationAmount ?? 20,
     generations: parameters?.generations ?? 100,
     mutate: parameters?.mutate ?? 20,
-    idReturnTo: parameters?.idReturnTo ?? undefined,
+    finishId: parameters?.finishId ?? undefined,
     permutations: parameters?.permutations ?? 7,
   };
 
@@ -59,12 +59,12 @@ const solve = (
 
     const chromosomeForPermutation = getFirstChromosome(
       points,
-      params.idReturnTo
+      params.finishId
     );
 
     chromosomeForPermutation.splice(0, 1);
 
-    if (params.idReturnTo !== undefined) {
+    if (params.finishId !== undefined) {
       chromosomeForPermutation.pop();
     }
 
@@ -83,7 +83,7 @@ const solve = (
     populationWithFitness = params.population;
   } else {
     populationWithFitness = getPopulationWithFitness(
-      generatePopulation(points, params.populationAmount, params.idReturnTo),
+      generatePopulation(points, params.populationAmount, params.finishId),
       values
     );
   }
@@ -91,16 +91,16 @@ const solve = (
   for (let i = 0, l = params.generations; i < l; i++) {
     const parents = pickParents(populationWithFitness);
     const splitPosition = getSplitPosition(populationWithFitness[0].chromosome);
-    const children = cross(parents, values, splitPosition, params.idReturnTo);
+    const children = cross(parents, values, splitPosition, params.finishId);
     const firstChromosome = mutate(
       children[0].chromosome,
       params.mutate,
-      params.idReturnTo
+      params.finishId
     );
     const secondChromosome = mutate(
       children[1].chromosome,
       params.mutate,
-      params.idReturnTo
+      params.finishId
     );
     const firstChild = {
       chromosome: firstChromosome,

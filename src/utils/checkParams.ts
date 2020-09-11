@@ -4,7 +4,7 @@ import { IValue } from "../models/Value";
 import { IParams } from "../models/Params";
 
 export default (points: IPoint[], values: IValue[], params: IParams) => {
-  if (params.permutations !== undefined && params.permutations <= 5) {
+  if (params.permutations !== undefined && params.permutations < 5) {
     throw new Error(`The permutations parameter can not be less than 5.`);
   }
 
