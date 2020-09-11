@@ -70,6 +70,14 @@ const solve = (
 
     let permutations = getPermutations(chromosomeForPermutation);
     permutations = permutations.map((item: any) => [0, ...item]);
+
+    if (params.finishId !== undefined) {
+      permutations = permutations.map((item: any) => [
+        ...item,
+        params.finishId,
+      ]);
+    }
+
     populationWithFitness = getPopulationWithFitness(permutations, values);
     populationWithFitness = sortBy(populationWithFitness, "fitness");
     const individual = populationWithFitness[0].chromosome;
