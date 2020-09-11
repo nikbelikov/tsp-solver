@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/nikbelikov/tsp-solver/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/@nikbelikov/tsp-solver.svg?style=flat)](https://www.npmjs.com/package/@nikbelikov/tsp-solver)
 
-> ⛵️ This package is in beta now. Please create an [issue on GitHub](https://github.com/nikbelikov/tsp-solver/issues) if you see an error or unexpected behavior.
+> ⛵️ Please create an [issue on GitHub](https://github.com/nikbelikov/tsp-solver/issues) if you see an error or unexpected behavior.
 
 ## What a heck is that?
 
