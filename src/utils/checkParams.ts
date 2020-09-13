@@ -4,8 +4,14 @@ import { IValue } from "../models/Value";
 import { IParams } from "../models/Params";
 
 export default (points: IPoint[], values: IValue[], params: IParams) => {
-  if (params.permutations !== undefined && params.permutations < 5) {
-    throw new Error(`The permutations parameter can not be less than 5.`);
+  if (params.finishId && params.finishId > points.length) {
+    throw new Error(
+      `The 'finishId' parameter can not be less than points.length.`
+    );
+  }
+
+  if (params.permutations && params.permutations < 5) {
+    throw new Error(`The 'permutations' parameter can not be less than 5.`);
   }
 
   points.forEach((point, index) => {
