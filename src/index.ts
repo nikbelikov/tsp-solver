@@ -26,9 +26,12 @@ const solve = (
     mutate: parameters?.mutate ?? 20,
     finishId: parameters?.finishId ?? undefined,
     permutations: parameters?.permutations ?? 7,
+    dangerMode: parameters?.dangerMode ?? false,
   };
 
-  checkParams(points, values, params);
+  if (!params.dangerMode) {
+    checkParams(points, values, params);
+  }
 
   let populationWithFitness;
 

@@ -6,4 +6,5 @@ export interface IParams {
     mutate?: number;
     finishId?: number;
     permutations?: number;
+    dangerMode?: boolean;
 }
