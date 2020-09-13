@@ -53,7 +53,7 @@ const VALUES = [
 TSPSolver(POINTS, VALUES);
 
 // when permutations parameter <= POINTS.length
-// => { latestPopulation: [result: [{id, name}] }
+// => { result: [{id, name}] }
 
 // other time
 // => { latestPopulation: [{chromosome, fitness}], result: [{id, name}] }
