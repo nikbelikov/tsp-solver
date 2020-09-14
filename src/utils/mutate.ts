@@ -9,7 +9,7 @@ export default (
   const randomNumber = random(1, 100);
 
   if (randomNumber <= percent) {
-    let chromosomeCopy = clone(chromosome);
+    const chromosomeCopy = clone(chromosome);
     const endOfRandomising = finishId !== undefined ? 2 : 1;
 
     let indexesLeft = [];

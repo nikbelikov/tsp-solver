@@ -13,12 +13,13 @@ export default (
   params: IParams
 ): IResult => {
   let populationWithFitness;
-  let permArr: any = [];
-  let usedChars: any = [];
+  const permArr: any = [];
+  const usedChars: any = [];
 
   const getPermutations = (array: number[]) => {
-    let index, currentItem;
-    for (index = 0; index < array.length; index++) {
+    let currentItem;
+
+    for (let index = 0; index < array.length; index++) {
       currentItem = array.splice(index, 1)[0];
       usedChars.push(currentItem);
       if (array.length === 0) {
