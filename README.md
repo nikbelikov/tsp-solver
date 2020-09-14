@@ -58,7 +58,7 @@ const values = [
 
 TSPSolver(points, values);
 
-// when permutations parameter <= POINTS.length
+// when points.length <= permutations parameter
 // => { result: [{id, name}] }
 
 // other time
