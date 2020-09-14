@@ -24,30 +24,36 @@ And then:
 import TSPSolver from '@nikbelikov/tsp-solver';
 
 const points = [
-  { id: 0, name: "Saint Petersburg" },
-  { id: 1, name: "Moscow" },
-  { id: 2, name: "Pskov" },
-  { id: 3, name: "Cherepovets" },
-  { id: 4, name: "Yaroslavl" },
-  { id: 5, name: "Tver" },
+  { id: 0, name: "Praha" },
+  { id: 1, name: "Paris" },
+  { id: 2, name: "Rennes" },
+  { id: 3, name: "Amsterdam" },
+  { id: 4, name: "Hamburg" },
+  { id: 5, name: "Budapest" },
+  { id: 6, name: "Brno" },
+  { id: 7, name: "Warszava" },
+  { id: 8, name: "Milano" },
+  ...
 ];
 
 const values = [
-  { set: [0, 1], value: 703 },
-  { set: [0, 2], value: 292 },
-  { set: [0, 3], value: 548 },
-  { set: [0, 4], value: 854 },
-  { set: [0, 5], value: 535 },
-  { set: [1, 2], value: 731 },
-  { set: [1, 3], value: 492 },
-  { set: [1, 4], value: 266 },
-  { set: [1, 5], value: 167 },
-  { set: [2, 3], value: 754 },
-  { set: [2, 4], value: 990 },
-  { set: [2, 5], value: 596 },
-  { set: [3, 4], value: 256 },
-  { set: [3, 5], value: 401 },
-  { set: [4, 5], value: 328 },
+  { set: [0, 1], value: 1032 },
+  { set: [0, 2], value: 1375 },
+  { set: [0, 3], value: 877 },
+  { set: [0, 4], value: 639 },
+  ...
+
+  { set: [1, 2], value: 354 },
+  { set: [1, 3], value: 517 },
+  { set: [1, 4], value: 902 },
+  { set: [1, 5], value: 1484 },
+  ...
+
+  { set: [2, 3], value: 856 },
+  { set: [2, 4], value: 1245 },
+  { set: [2, 5], value: 1823 },
+  { set: [2, 6], value: 1570 },
+  ...
 ];
 
 TSPSolver(points, values);
