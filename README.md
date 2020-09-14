@@ -23,7 +23,7 @@ And then:
 ```
 import TSPSolver from '@nikbelikov/tsp-solver';
 
-const POINTS = [
+const points = [
   { id: 0, name: "Saint Petersburg" },
   { id: 1, name: "Moscow" },
   { id: 2, name: "Pskov" },
@@ -32,7 +32,7 @@ const POINTS = [
   { id: 5, name: "Tver" },
 ];
 
-const VALUES = [
+const values = [
   { set: [0, 1], value: 703 },
   { set: [0, 2], value: 292 },
   { set: [0, 3], value: 548 },
@@ -50,7 +50,7 @@ const VALUES = [
   { set: [4, 5], value: 328 },
 ];
 
-TSPSolver(POINTS, VALUES);
+TSPSolver(points, values);
 
 // when permutations parameter <= POINTS.length
 // => { result: [{id, name}] }
@@ -66,11 +66,9 @@ They are all set by default, but you can change one, two, or even all of them.
 ```
 const params = {
   population: ...,
-  populationAmount: ...,
-  generations: ...,
   mutate: ...,
   finishId: ...,
-  permutations: ...,
+  ...
 }
 
 TSPSolver(points, values, { ...params });
