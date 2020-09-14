@@ -8,7 +8,7 @@ This package will help you in solving the traveling salesman problem.
 
 ## Demo
 
-[https://codesandbox.io/s/hardcore-curie-r9m3w](https://codesandbox.io/s/hardcore-curie-r9m3w)
+[https://codesandbox.io/s/magical-zhukovsky-mdtyp](https://codesandbox.io/s/magical-zhukovsky-mdtyp)
 
 ## How to use
 
