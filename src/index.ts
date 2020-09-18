@@ -13,21 +13,14 @@ import { IParams } from "./models/Params";
 import { IResult } from "./models/Result";
 import checkParams from "./utils/checkParams";
 import getPermutationsResult from "./utils/getPermutationsResult";
+import getParams from "./utils/getParams";
 
 const solve = (
   points: IPoint[],
   values: IValue[],
   parameters?: IParams
 ): IResult => {
-  const params = {
-    population: parameters?.population ?? [],
-    populationAmount: parameters?.populationAmount ?? 20,
-    generations: parameters?.generations ?? 100,
-    mutate: parameters?.mutate ?? 20,
-    finishId: parameters?.finishId ?? undefined,
-    permutations: parameters?.permutations ?? 7,
-    dangerMode: parameters?.dangerMode ?? false,
-  };
+  const params = getParams(parameters);
 
   if (!params.dangerMode) {
     checkParams(points, values, params);
