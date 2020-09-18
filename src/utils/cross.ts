@@ -3,6 +3,35 @@ import getFitnessForChromosome from "./getFitnessForChromosome";
 import { IValue } from "../models/Value";
 import { clone } from "lodash";
 
+const getChild = (
+  splitPosition: number,
+  child: number[],
+  chromosomeA: number[],
+  chromosomeB: number[],
+  values: IValue[]
+) => {
+  for (let i = 0, l = splitPosition; i <= l; i++) {
+    child.push(chromosomeA[i]);
+  }
+
+  for (let i = splitPosition + 1, l = chromosomeB.length - 1; i <= l; i++) {
+    if (!child.includes(chromosomeB[i])) {
+      child.push(chromosomeB[i]);
+    }
+  }
+
+  chromosomeB.forEach((item) => {
+    if (!child.includes(item)) {
+      child.push(item);
+    }
+  });
+
+  return {
+    chromosome: child,
+    fitness: getFitnessForChromosome(child, values),
+  };
+};
+
 export default (
   parents: IChromosomeWithFitness[],
   values: IValue[],
@@ -20,51 +49,21 @@ export default (
     secondChromosome.pop();
   }
 
-  for (let i = 0, l = splitPosition; i <= l; i++) {
-    firstChild.push(firstChromosome[i]);
-  }
+  const one = getChild(
+    splitPosition,
+    firstChild,
+    firstChromosome,
+    secondChromosome,
+    values
+  );
 
-  for (
-    let i = splitPosition + 1, l = secondChromosome.length - 1;
-    i <= l;
-    i++
-  ) {
-    if (!firstChild.includes(secondChromosome[i])) {
-      firstChild.push(secondChromosome[i]);
-    }
-  }
-
-  secondChromosome.forEach((item) => {
-    if (!firstChild.includes(item)) {
-      firstChild.push(item);
-    }
-  });
-
-  const one = {
-    chromosome: firstChild,
-    fitness: getFitnessForChromosome(firstChild, values),
-  };
-
-  for (let i = 0, l = splitPosition; i <= l; i++) {
-    secondChild.push(secondChromosome[i]);
-  }
-
-  for (let i = splitPosition + 1, l = firstChromosome.length - 1; i <= l; i++) {
-    if (!secondChild.includes(firstChromosome[i])) {
-      secondChild.push(firstChromosome[i]);
-    }
-  }
-
-  firstChromosome.forEach((item) => {
-    if (!secondChild.includes(item)) {
-      secondChild.push(item);
-    }
-  });
-
-  const two = {
-    chromosome: secondChild,
-    fitness: getFitnessForChromosome(secondChild, values),
-  };
+  const two = getChild(
+    splitPosition,
+    secondChild,
+    secondChromosome,
+    firstChromosome,
+    values
+  );
 
   if (finishId !== undefined) {
     one.chromosome.push(finishId);
