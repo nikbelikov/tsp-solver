@@ -8,7 +8,7 @@ This package will help you in solving the traveling salesman problem.
 
 ## Demo
 
-[https://codesandbox.io/s/magical-zhukovsky-mdtyp](https://codesandbox.io/s/magical-zhukovsky-mdtyp)
+[https://codesandbox.io/s/keen-boyd-wvg4c](https://codesandbox.io/s/keen-boyd-wvg4c)
 
 Also, a local demo page is available at the `/demo/` folder. To run it, just do `npm run demo`.
 
