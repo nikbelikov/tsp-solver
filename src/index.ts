@@ -32,5 +32,3 @@ const solve = (
 };
 
 export default solve;
-
-// TODO: populationWithFitness -> population
