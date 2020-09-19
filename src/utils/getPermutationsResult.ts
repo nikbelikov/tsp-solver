@@ -2,7 +2,7 @@ import getFirstChromosome from "./getFirstChromosome";
 import getPopulationWithFitness from "./getPopulationWithFitness";
 import { sortBy } from "lodash";
 import select from "./select";
-import { IParameters } from "../models/Params";
+import { IParams } from "../models/Params";
 import { IPoint } from "../models/Point";
 import { IValue } from "../models/Value";
 import { IResult } from "../models/Result";
@@ -10,7 +10,7 @@ import { IResult } from "../models/Result";
 export default (
   points: IPoint[],
   values: IValue[],
-  params: IParameters
+  params?: IParams
 ): IResult => {
   let populationWithFitness;
   const permArr: any = [];
@@ -32,19 +32,19 @@ export default (
     return permArr;
   };
 
-  const chromosomeForPermutation = getFirstChromosome(points, params.finishId);
+  const chromosomeForPermutation = getFirstChromosome(points, params?.finishId);
 
   chromosomeForPermutation.splice(0, 1);
 
-  if (params.finishId !== undefined) {
+  if (params?.finishId !== undefined) {
     chromosomeForPermutation.pop();
   }
 
   let permutations = getPermutations(chromosomeForPermutation);
   permutations = permutations.map((item: any) => [0, ...item]);
 
-  if (params.finishId !== undefined) {
-    permutations = permutations.map((item: any) => [...item, params.finishId]);
+  if (params?.finishId !== undefined) {
+    permutations = permutations.map((item: any) => [...item, params?.finishId]);
   }
 
   populationWithFitness = getPopulationWithFitness(permutations, values);

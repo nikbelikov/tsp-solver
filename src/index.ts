@@ -1,6 +1,6 @@
 import { IPoint } from "./models/Point";
 import { IValue } from "./models/Value";
-import { IParameters } from "./models/Params";
+import { IParams } from "./models/Params";
 import { IResult } from "./models/Result";
 import checkParams from "./utils/checkParams";
 import getPermutationsResult from "./utils/getPermutationsResult";
@@ -10,7 +10,7 @@ import getGeneticResult from "./utils/getGeneticResult";
 const solve = (
   points: IPoint[],
   values: IValue[],
-  parameters?: IParameters
+  parameters?: IParams
 ): IResult => {
   const params = getParameters(parameters);
 
