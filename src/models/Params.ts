@@ -1,6 +1,6 @@
 import { IChromosomeWithFitness } from "./Chromosome";
 
-export interface IParams {
+export interface IParameters {
   population?: IChromosomeWithFitness[];
   populationAmount?: number;
   generations?: number;

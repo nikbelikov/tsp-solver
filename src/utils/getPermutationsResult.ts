@@ -2,7 +2,7 @@ import getFirstChromosome from "./getFirstChromosome";
 import getPopulationWithFitness from "./getPopulationWithFitness";
 import { sortBy } from "lodash";
 import select from "./select";
-import { IParams } from "../models/Params";
+import { IParameters } from "../models/Params";
 import { IPoint } from "../models/Point";
 import { IValue } from "../models/Value";
 import { IResult } from "../models/Result";
@@ -10,7 +10,7 @@ import { IResult } from "../models/Result";
 export default (
   points: IPoint[],
   values: IValue[],
-  params: IParams
+  params: IParameters
 ): IResult => {
   let populationWithFitness;
   const permArr: any = [];

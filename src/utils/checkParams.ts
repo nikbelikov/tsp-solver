@@ -1,9 +1,9 @@
 import { findIndex } from "lodash";
 import { IPoint } from "../models/Point";
 import { IValue } from "../models/Value";
-import { IParams } from "../models/Params";
+import { IParameters } from "../models/Params";
 
-export default (points: IPoint[], values: IValue[], params: IParams) => {
+export default (points: IPoint[], values: IValue[], params: IParameters) => {
   if (params.finishId && params.finishId > points.length) {
     throw new Error(
       `The 'finishId' parameter can not be less than points.length.`

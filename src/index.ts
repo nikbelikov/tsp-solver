@@ -9,7 +9,7 @@ import mutate from "./utils/mutate";
 import cross from "./utils/cross";
 import getFitnessForChromosome from "./utils/getFitnessForChromosome";
 import getSplitPosition from "./utils/getSplitPosition";
-import { IParams } from "./models/Params";
+import { IParameters } from "./models/Params";
 import { IResult } from "./models/Result";
 import checkParams from "./utils/checkParams";
 import getPermutationsResult from "./utils/getPermutationsResult";
@@ -18,7 +18,7 @@ import getParams from "./utils/getParams";
 const solve = (
   points: IPoint[],
   values: IValue[],
-  parameters?: IParams
+  parameters?: IParameters
 ): IResult => {
   const params = getParams(parameters);
 
