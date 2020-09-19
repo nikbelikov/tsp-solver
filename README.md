@@ -94,7 +94,7 @@ TSPSolver(points, values, { ...params });
 
 ### About Values
 
-If you have, for example, a [2, 1] set in some route, the algorithm will try to find the exact value for that set. If not, it'll check for [1, 2] value in case if it exists.
+If you have, for example, a `[2, 1]` set in some route, the algorithm will try to find the exact value for that set. If not, it'll check for `[1, 2]` value in case if it exists.
 
 So this behavior allows you to describe situations when a path from one city to another is equal to both directions. Also, you can implement situations when a return path is different.
 
