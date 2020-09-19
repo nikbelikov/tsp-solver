@@ -8,7 +8,7 @@ This package will help you in solving the traveling salesman problem.
 
 ## Demo
 
-[https://codesandbox.io/s/keen-boyd-wvg4c](https://codesandbox.io/s/keen-boyd-wvg4c)
+[https://codesandbox.io/s/epic-villani-llzew](https://codesandbox.io/s/epic-villani-llzew)
 
 Also, a local demo page is available at the `/demo/` folder. To run it, just do `npm run demo`. In this case you need to install [https://parceljs.org](https://parceljs.org) first.
 
@@ -120,7 +120,8 @@ The fitness here will be 9:
 And:
 
 ```
-[0, 2, 1],
+[0, 2, 1]
+
 [
   { set: [0, 1], value: 1 },
   { set: [0, 2], value: 3 }, <-
