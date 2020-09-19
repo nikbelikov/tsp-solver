@@ -110,7 +110,7 @@ For example:
 ]
 ```
 
-The fitness here will be 9:
+The path here will be 9:
 
 ```
 0 -> 2 = 3
@@ -130,7 +130,7 @@ And:
 ]
 ```
 
-The fitness is 13:
+The path is 13:
 
 ```
 0 -> 2 = 3
