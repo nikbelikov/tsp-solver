@@ -10,9 +10,7 @@ This package will help you in solving the traveling salesman problem.
 
 [https://codesandbox.io/s/keen-boyd-wvg4c](https://codesandbox.io/s/keen-boyd-wvg4c)
 
-Also, a local demo page is available at the `/demo/` folder. To run it, just do `npm run demo`.
-
-> You need to install https://parceljs.org first.
+Also, a local demo page is available at the `/demo/` folder. To run it, just do `npm run demo`. In this case you need to install [https://parceljs.org](https://parceljs.org) first.
 
 ## How to use
 
@@ -93,3 +91,47 @@ TSPSolver(points, values, { ...params });
 | `finishId` | number | undefined | `Id` you need to finish at. If `undefined`, the algorithm will find a better way to visit all the cities and no matter where you will finish the route. If you want to return to a start city, pass through 0. If you want to finish at a particular point, pass through an index of that point (for example, `TSPSolver(points, values, { finishId: 2 })`). |
 | `permutations` | number | 7 | The number indicates a count of cities when the package will generate all possible permutations of nodes and **will ignore the genetic algorithm**. Can not be less than 5. |
 | `dangerMode` | boolean | false | If `true`, the package will ignore parameters check. It can increase performance, but be careful with it. |
+
+### About Values:
+
+If you have, for example, a [3, 1] set in some route, the algorithm will try to find the exact value for that set. If not, it'll check for [1, 3] value in case if it exists.
+
+So this behavior allows you to describe situations when a path from one city to another is equal to both directions. Also, you can implement situations when a return path is different.
+
+For example:
+
+```
+[0, 2, 1]
+
+[
+  { set: [0, 1], value: 1 }, <-
+  { set: [0, 2], value: 3 },
+  { set: [1, 2], value: 6 }, <-
+]
+```
+
+The fitness here will be 9:
+
+```
+0 -> 2 = 3
+2 -> 1 = 6
+```
+
+And:
+
+```
+[0, 2, 1],
+[
+  { set: [0, 1], value: 1 },
+  { set: [0, 2], value: 3 }, <-
+  { set: [1, 2], value: 6 },
+  { set: [2, 1], value: 10 }, <-
+]
+```
+
+The fitness is 13:
+
+```
+0 -> 2 = 3
+2 -> 1 = 10
+```
