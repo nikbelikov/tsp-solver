@@ -63,6 +63,7 @@ const ready = () => {
 
   console.log(solved);
 
+  // @ts-ignore
   document.getElementById("app").innerHTML = JSON.stringify(solved.result);
 };
 
