@@ -1,6 +1,6 @@
-import { IParameters } from "../models/Params";
+import { IParameters, IParams } from "../models/Params";
 
-export default (parameters: IParameters | undefined): IParameters => ({
+export default (parameters: IParams | undefined): IParameters => ({
   population: parameters?.population ?? [],
   populationAmount: parameters?.populationAmount ?? 20,
   generations: parameters?.generations ?? 100,

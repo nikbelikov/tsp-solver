@@ -4,7 +4,7 @@ import { IParameters } from "./models/Params";
 import { IResult } from "./models/Result";
 import checkParams from "./utils/checkParams";
 import getPermutationsResult from "./utils/getPermutationsResult";
-import getParams from "./utils/getParams";
+import getParameters from "./utils/getParameters";
 import getGeneticResult from "./utils/getGeneticResult";
 
 const solve = (
@@ -12,7 +12,7 @@ const solve = (
   values: IValue[],
   parameters?: IParameters
 ): IResult => {
-  const params = getParams(parameters);
+  const params = getParameters(parameters);
 
   if (!params.dangerMode) {
     checkParams(points, values, params);
