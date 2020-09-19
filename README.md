@@ -104,8 +104,8 @@ For example:
 [0, 2, 1]
 
 [
-  { set: [0, 1], value: 1 }, <-
-  { set: [0, 2], value: 3 },
+  { set: [0, 1], value: 1 },
+  { set: [0, 2], value: 3 }, <-
   { set: [1, 2], value: 6 }, <-
 ]
 ```
