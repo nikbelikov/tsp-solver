@@ -1,6 +1,10 @@
 import { IPoint } from "../models/Point";
+import { IChromosome } from "../models/Chromosome";
 
-export default (points: IPoint[], finishId: number | undefined) => {
+export default (
+  points: IPoint[],
+  finishId: number | undefined
+): IChromosome => {
   const firstChromosome: number[] = [];
   points.forEach((point) => {
     firstChromosome.push(point.id);
