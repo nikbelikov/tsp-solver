@@ -10,6 +10,10 @@ This package will help you in solving the traveling salesman problem.
 
 [https://codesandbox.io/s/magical-zhukovsky-mdtyp](https://codesandbox.io/s/magical-zhukovsky-mdtyp)
 
+Also, a local demo page is available at the `/demo/` folder. To run it, just do `npm run demo`.
+
+> You need to install https://parceljs.org first.
+
 ## How to use
 
 Install the package:
