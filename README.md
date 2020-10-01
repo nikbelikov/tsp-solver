@@ -8,7 +8,7 @@ This package will help you in solving the traveling salesman problem.
 
 ## Demo
 
-[https://codesandbox.io/s/epic-villani-llzew](https://codesandbox.io/s/epic-villani-llzew)
+[https://codesandbox.io/s/autumn-dew-8fpi3](https://codesandbox.io/s/autumn-dew-8fpi3)
 
 Also, a local demo page is available at the `/demo/` folder. To run it, just do `npm run demo`. In this case you need to install [https://parceljs.org](https://parceljs.org) first.
 
