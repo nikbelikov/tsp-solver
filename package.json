@@ -10,7 +10,6 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "test:coverage": "jest --coverage --coverageReporters=\"text-summary\" --config jestconfig.json",
-    "test:summary": "jest --coverage --coverageReporters=\"text-summary\" --config jestconfig.json",
     "build": "tsc",
     "demo": "parcel demo/index.html",
     "lint": "tslint -p tsconfig.json",

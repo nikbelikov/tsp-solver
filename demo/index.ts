@@ -1,4 +1,5 @@
 import TSPSolver from "../src/index";
+import { IChromosomeWithFitness } from "../src/models/Chromosome";
 
 const ready = () => {
   const points = [
@@ -59,12 +60,31 @@ const ready = () => {
     { set: [7, 8], value: 1525 },
   ];
 
-  const solved = TSPSolver(points, values, { finishId: 0 });
+  let i = 0;
 
-  console.log(solved);
+  const count = (latestPopulation?: IChromosomeWithFitness[]) => {
+    let solved;
 
-  // @ts-ignore
-  document.getElementById("app").innerHTML = JSON.stringify(solved.result);
+    do {
+      i++;
+      solved = TSPSolver(points, values, {
+        finishId: 0,
+        population: latestPopulation || undefined,
+      });
+      // @ts-ignore
+      document.getElementById("app").innerHTML = `${i}: ${JSON.stringify(
+        solved.result
+      )}`;
+    } while (i % 1 !== 0);
+
+    if (i === 300) {
+      alert("done!");
+    } else {
+      setTimeout(count, 0, solved.latestPopulation);
+    }
+  };
+
+  count();
 };
 
 document.addEventListener("DOMContentLoaded", ready);

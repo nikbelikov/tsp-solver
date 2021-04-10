@@ -74,7 +74,6 @@ They are all set by default, but you can change one, two, or even all of them.
 ```
 const params = {
   population: ...,
-  mutate: ...,
   finishId: ...,
   ...
 }
@@ -87,7 +86,6 @@ TSPSolver(points, values, { ...params });
 | `population` | array | [] | You can pass through a population that comes as a result of a previous iteration. It has a format: `[{ chromosome: [number], fitness: number }]` (see **How to use** section). |
 | `populationAmount` | number | 20 | Population amount which will be involved in a participation. Will be considered if the `population` parameter stays an empty array. |
 | `generations` | number | 100 | How many generations you need to solve the problem. |
-| `mutate` | number | 20 | Mutation percent for a crossed chromosomes. |
 | `finishId` | number | undefined | `Id` you need to finish at. If `undefined`, the algorithm will find a better way to visit all the cities and no matter where you will finish the route. If you want to return to a start city, pass through 0. If you want to finish at a particular point, pass through an index of that point (for example, `TSPSolver(points, values, { finishId: 2 })`). |
 | `permutations` | number | 7 | The number indicates a count of cities when the package will generate all possible permutations of nodes and **will ignore the genetic algorithm**. Can not be less than 5. |
 | `dangerMode` | boolean | false | If `true`, the package will ignore parameters check. It can increase performance, but be careful with it. |
