@@ -77,8 +77,8 @@ const ready = () => {
       )}`;
     } while (i % 1 !== 0);
 
-    if (i === 300) {
-      alert("done!");
+    if (i === 10) {
+      // alert("done!");
     } else {
       setTimeout(count, 0, solved.latestPopulation);
     }
